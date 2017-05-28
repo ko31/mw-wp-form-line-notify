@@ -1,4 +1,4 @@
-=== Replace Protected Password ===
+=== MW WP Form LINE Notify ===
 Contributors: ko31
 Donate link: http://go-sign.info
 Tags: form, LINE, LINE Notify, mail
