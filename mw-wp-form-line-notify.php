@@ -108,7 +108,7 @@ class mw_wp_form_line_notify {
             __( 'Line Notify', 'line-notify' ),
             'edit_pages',
             $this->plugin_name,
-            array( $this, 'options_page' )
+            array( $this, 'edit_page' )
         );
     }
 
@@ -168,7 +168,7 @@ class mw_wp_form_line_notify {
 <?php
     }
 
-    public function options_page()
+    public function edit_page()
     {
         if ( isset($_POST['mw-wp-form-line-notify-nonce']) && $_POST['mw-wp-form-line-notify-nonce'] ) {
             $access_token = $_POST['access_token'];
