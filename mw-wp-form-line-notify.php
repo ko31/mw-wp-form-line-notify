@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MW WP Form LINE Notify
  * Plugin URI:  https://github.com/ko31/mw-wp-form-line-notify
- * Description: 
+ * Description: This plugin send LINE Notify a message sent from MW WP Form
  * Version:     0.9.0
  * Author:      Ko Takagi
  * Author URI:  http://go-sign.info/
