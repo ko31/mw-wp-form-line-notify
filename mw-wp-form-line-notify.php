@@ -161,7 +161,7 @@ class mw_wp_form_line_notify {
         <?php if ( $notices = get_transient( 'mw-wp-form-line-notify-updated' ) ): ?>
             <div class="updated">
             <ul>
-                <li><?php esc_html_e( 'Settings has been updated.', 'mw-wp-form-line-notify' );?></li>
+                <li><?php echo esc_html__( 'Settings has been updated.', 'mw-wp-form-line-notify' );?></li>
             </ul>
             </div>
         <?php endif; ?>
@@ -191,22 +191,22 @@ class mw_wp_form_line_notify {
 <table class="form-table">
 <tbody>
 <tr>
-<th scope="row"><label for="access_token"><?php esc_html_e( 'LINE Notify Access Token', 'mw-wp-form-line-notify' );?></label></th>
+<th scope="row"><label for="access_token"><?php echo esc_html__( 'LINE Notify Access Token', 'mw-wp-form-line-notify' );?></label></th>
 <td>
-<input name="access_token" type="text" id="access_token" placeholder="<?php esc_html_e( 'Input your access token', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $access_token );?>" class="regular-text">
+<input name="access_token" type="text" id="access_token" placeholder="<?php echo esc_html__( 'Input your access token', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $access_token );?>" class="regular-text">
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="form_key"><?php esc_html_e( 'MW WP Form Key', 'mw-wp-form-line-notify' );?></label></th>
+<th scope="row"><label for="form_key"><?php echo esc_html__( 'MW WP Form Key', 'mw-wp-form-line-notify' );?></label></th>
 <td>
-<input name="form_key" type="text" id="form_key" placeholder="<?php esc_html_e( 'Input MW WP Form key', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $form_key );?>" class="regular-text">
-<p><?php esc_html_e( 'If you want to set up some forms, input form keys separated by commas.', 'mw-wp-form-line-notify' );?><p>
+<input name="form_key" type="text" id="form_key" placeholder="<?php echo esc_html__( 'Input MW WP Form key', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $form_key );?>" class="regular-text">
+<p><?php echo esc_html__( 'If you want to set up some forms, input form keys separated by commas.', 'mw-wp-form-line-notify' );?><p>
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="message"><?php esc_html_e( 'Message', 'mw-wp-form-line-notify' );?></label></th>
+<th scope="row"><label for="message"><?php echo esc_html__( 'Message', 'mw-wp-form-line-notify' );?></label></th>
 <td>
-<textarea name="message" id="massage" class="regular-text code" placeholder="<?php esc_html_e( 'Please enter the message to send', 'mw-wp-form-line-notify' );?>" rows="3"><?php echo esc_html( $message );?></textarea>
+<textarea name="message" id="massage" class="regular-text code" placeholder="<?php echo esc_html__( 'Please enter the message to send', 'mw-wp-form-line-notify' );?>" rows="5"><?php echo esc_html( $message );?></textarea>
 <p><?php printf( esc_html__( '%s is converted the email subject. %s is converted the email body', 'mw-wp-form-line-notify' ), '<kbd>{subject}</kbd>', '<kbd>{body}</kbd>' );?><p>
 </td>
 </tr>
@@ -214,7 +214,7 @@ class mw_wp_form_line_notify {
 </table>
 
 <p class="submit">
-<input type="submit" name="submit" id="submit" class="button button-primary" value="<?php esc_html_e( 'Update', 'mw-wp-form-line-notify' );?>">
+<input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo esc_html__( 'Update', 'mw-wp-form-line-notify' );?>">
 </p>
 </form>
 </div><!-- #mw-wp-form-line-notify -->
