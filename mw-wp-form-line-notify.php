@@ -80,13 +80,11 @@ class mw_wp_form_line_notify {
     }
 
     public function mwform_admin_mail_line_notify( $Mail, $values, $Data ) {
-//        $this->post($values);
         $options = get_option( $this->plugin_name );
         $access_token = $options['access_token'];
-
-        $message = $Mail->subject;
-        $message .= "\n";
-        $message .= $Mail->body;
+        $message = $options['message'];
+        $message = str_replace( "{subject}", $Mail->subject, $message );
+        $message = str_replace( "{body}", $Mail->body, $message );
 
         $url = 'https://notify-api.line.me/api/notify';
         $response = wp_remote_post( $url, array(
@@ -121,6 +119,7 @@ class mw_wp_form_line_notify {
                 $e = new WP_Error();
                 $access_token = $_POST['access_token'];
                 $form_key = $_POST['form_key'];
+                $message = $_POST['message'];
                 if ( $form_key ) {
                     $form_keys = array();
                     $keys = explode( ",", $form_key );
@@ -139,6 +138,7 @@ class mw_wp_form_line_notify {
                     $options = get_option( $this->plugin_name );
                     $options['access_token'] = $access_token;
                     $options['form_key'] = $form_key;
+                    $options['message'] = $message;
                     update_option( $this->plugin_name, $options );
                     set_transient( 'mw-wp-form-line-notify-updated', true, 5 );
                 }
@@ -149,16 +149,16 @@ class mw_wp_form_line_notify {
     public function admin_notices()
     {
 ?>
-        <?php if ( $messages = get_transient( 'mw-wp-form-line-notify-errors' ) ): ?>
+        <?php if ( $notices = get_transient( 'mw-wp-form-line-notify-errors' ) ): ?>
             <div class="error">
             <ul>
-            <?php foreach ( $messages as $message ): ?>
-                <li><?php echo esc_html( $message );?></li>
+            <?php foreach ( $notices as $notice ): ?>
+                <li><?php echo esc_html( $notice );?></li>
             <?php endforeach; ?>
             </ul>
             </div>
         <?php endif; ?>
-        <?php if ( $messages = get_transient( 'mw-wp-form-line-notify-updated' ) ): ?>
+        <?php if ( $notices = get_transient( 'mw-wp-form-line-notify-updated' ) ): ?>
             <div class="updated">
             <ul>
                 <li><?php esc_html_e( 'Settings has been updated.', 'mw-wp-form-line-notify' );?></li>
@@ -173,10 +173,12 @@ class mw_wp_form_line_notify {
         if ( isset($_POST['mw-wp-form-line-notify-nonce']) && $_POST['mw-wp-form-line-notify-nonce'] ) {
             $access_token = $_POST['access_token'];
             $form_key = $_POST['form_key'];
+            $message = $_POST['message'];
         } else {
             $options = get_option( $this->plugin_name );
-            $access_token = $options['access_token'];
-            $form_key = $options['form_key'];
+            $access_token = isset( $options['access_token'] ) ? $options['access_token'] : '';
+            $form_key = isset( $options['form_key'] ) ? $options['form_key'] : '';
+            $message = isset( $options['message'] ) ? $options['message'] : '';
         }
 
 ?>
@@ -186,30 +188,26 @@ class mw_wp_form_line_notify {
 <form method="post" action="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>">
 <?php wp_nonce_field( 'mw-wp-form-line-notify', 'mw-wp-form-line-notify-nonce' ); ?>
 
-<hr>
-<h3><?php esc_html_e( 'LINE Notify Settings', 'mw-wp-form-line-notify' );?></h3>
 <table class="form-table">
 <tbody>
-</tr>
 <tr>
 <th scope="row"><label for="access_token"><?php esc_html_e( 'LINE Notify Access Token', 'mw-wp-form-line-notify' );?></label></th>
 <td>
 <input name="access_token" type="text" id="access_token" placeholder="<?php esc_html_e( 'Input your access token', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $access_token );?>" class="regular-text">
 </td>
 </tr>
-</tbody>
-</table>
-
-<hr>
-<h3><?php esc_html_e( 'MW WP Form Settings', 'mw-wp-form-line-notify' );?></h3>
-<table class="form-table">
-<tbody>
-</tr>
 <tr>
-<th scope="row"><label for="form_key"><?php esc_html_e( 'Form Key', 'mw-wp-form-line-notify' );?></label></th>
+<th scope="row"><label for="form_key"><?php esc_html_e( 'MW WP Form Key', 'mw-wp-form-line-notify' );?></label></th>
 <td>
 <input name="form_key" type="text" id="form_key" placeholder="<?php esc_html_e( 'Input MW WP Form key', 'mw-wp-form-line-notify' );?>" value="<?php echo esc_html( $form_key );?>" class="regular-text">
 <p><?php esc_html_e( 'If you want to set up some forms, input form keys separated by commas.', 'mw-wp-form-line-notify' );?><p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="message"><?php esc_html_e( 'Message', 'mw-wp-form-line-notify' );?></label></th>
+<td>
+<textarea name="message" id="massage" class="regular-text code" placeholder="<?php esc_html_e( 'Please enter the message to send', 'mw-wp-form-line-notify' );?>" rows="3"><?php echo esc_html( $message );?></textarea>
+<p><?php printf( esc_html__( '%s is converted the email subject. %s is converted the email body', 'mw-wp-form-line-notify' ), '<kbd>{subject}</kbd>', '<kbd>{body}</kbd>' );?><p>
 </td>
 </tr>
 </tbody>
