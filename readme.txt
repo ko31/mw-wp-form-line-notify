@@ -22,6 +22,9 @@ This plugin send LINE Notify a message sent from MW WP Form.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. You will find 'MW WP Form LINE Notify' within the admin bar while logged in.
 
+== Screenshots ==
+1. `/assets/screenshot-1.png`
+
 == Changelog ==
 
 = 0.9.0 =
