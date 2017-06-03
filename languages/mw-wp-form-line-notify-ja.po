@@ -1,0 +1,100 @@
+# Translation of Plugins - MW WP Form LINE Notify - Development (trunk) in Japanese
+# This file is distributed under the same license as the Plugins - MW WP Form LINE Notify - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - MW WP Form LINE Notify 0.9.0\n"
+
+#. Author URI of the plugin/theme
+msgid "http://go-sign.info/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Ko Takagi"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin send LINE Notify a message sent from MW WP Form"
+msgstr "MW WP Form で送信された内容を LINE Notify にメッセージ送信できるプラグインです。"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ko31/mw-wp-form-line-notify"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "MW WP Form LINE Notify"
+msgstr ""
+
+#: mw-wp-form-line-notify.php:217
+msgid "Update"
+msgstr "更新"
+
+#: mw-wp-form-line-notify.php:210
+msgid "%s is converted the email subject. %s is converted the email body"
+msgstr "%s はメール件名に置換されます。 %s はメール本文に置換されます。"
+
+#: mw-wp-form-line-notify.php:209
+msgid "Please enter the message to send"
+msgstr "送信するメッセージを入力してください"
+
+#: mw-wp-form-line-notify.php:207
+msgid "Message"
+msgstr "メッセージ"
+
+#: mw-wp-form-line-notify.php:203
+msgid "If you want to set up some forms, input form keys separated by commas."
+msgstr "複数のフォームを対象としたい場合、MW WP Form key をカンマ区切りで入力してください"
+
+#: mw-wp-form-line-notify.php:202
+msgid "Input MW WP Form key"
+msgstr "MW WP Form key を入力してください"
+
+#: mw-wp-form-line-notify.php:200
+msgid "MW WP Form Key"
+msgstr ""
+
+#: mw-wp-form-line-notify.php:196
+msgid "Input your access token"
+msgstr "access token を入力してください"
+
+#: mw-wp-form-line-notify.php:194
+msgid "LINE Notify Access Token"
+msgstr ""
+
+#: mw-wp-form-line-notify.php:164
+msgid "Settings has been updated."
+msgstr "設定が更新されました"
+
+#: mw-wp-form-line-notify.php:130
+msgid "Form key contains invalid value."
+msgstr "MW WP Form key の値が正しくありません"
+
+#: mw-wp-form-line-notify.php:107 mw-wp-form-line-notify.php:108
+msgid "Line Notify"
+msgstr ""
+
+#. Found in installation list item, faq list item.
+msgid "You will find 'MW WP Form LINE Notify' within the admin bar while logged in."
+msgstr "ログイン中、管理バーに「MW WP Form」> 「LINE Notify」が表示されます。"
+
+#. Found in installation list item, faq list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress."
+msgstr "「プラグイン」メニューからプラグインを有効化します。"
+
+#. Found in installation list item, faq list item.
+msgid "Upload the mw-wp-form-line-notify directory to the plugins directory."
+msgstr "mw-wp-form-line-notify ディレクトリをプラグインディレクトリにアップロードしてください。"
+
+#. Found in description list item.
+msgid "<a href=\"https://github.com/ko31/mw-wp-form-line-notify\">Github</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This plugin send LINE Notify a message sent from MW WP Form."
+msgstr "MW WP Form で送信された内容を LINE Notify にメッセージ送信できるプラグインです。"
