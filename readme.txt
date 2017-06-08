@@ -13,6 +13,9 @@ This plugin send LINE Notify a message sent from MW WP Form.
 
 This plugin send LINE Notify a message sent from MW WP Form.
 
+* This plugin requires '[MW WP Form](https://wordpress.org/plugins/mw-wp-form/)' plugin.
+* This plugin requires registration '[LINE Notify](https://notify-bot.line.me/)'.
+
 = Related Links =
 * [Github](https://github.com/ko31/mw-wp-form-line-notify)
 
