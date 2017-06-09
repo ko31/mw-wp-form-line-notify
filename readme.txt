@@ -3,7 +3,7 @@ Contributors: ko31
 Donate link: http://go-sign.info
 Tags: form, LINE, LINE Notify, mail
 Requires at least: 3.9
-Tested up to: 4.7
+Tested up to: 4.8
 Stable tag: 0.9.0
 License: GPLv2 or later
 
