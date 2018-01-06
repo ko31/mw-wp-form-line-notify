@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ko31/mw-wp-form-line-notify.svg)](https://travis-ci.org/ko31/mw-wp-form-line-notify)
 [![](https://img.shields.io/wordpress/plugin/v/mw-wp-form-line-notify.svg)](https://wordpress.org/plugins/mw-wp-form-line-notify/)
 [![](https://img.shields.io/wordpress/v/mw-wp-form-line-notify.svg)](https://wordpress.org/plugins/mw-wp-form-line-notify/)
+[![](https://ps.w.org/mw-wp-form-line-notify/assets/banner-1554x500.png)](https://wordpress.org/plugins/mw-wp-form-line-notify/)
 
 This plugin send LINE Notify a message sent from MW WP Form.
 
